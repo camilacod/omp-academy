@@ -9,6 +9,8 @@ Plataforma para estudiar **OpenMP y algoritmos paralelos** (CS4052 · Computaci�
 - **Diapos**: resúmenes propios de U4.1–U4.5 y U5.1–U5.4, con visor navegable.
 - Inicio con cuenta regresiva, plan de estudio diario, racha, XP y niveles. El progreso se guarda en el navegador (exportable desde `/progreso`).
 
+**Sitio en producción:** https://omp-academy.vercel.app
+
 ## Desarrollo
 
 ```bash
