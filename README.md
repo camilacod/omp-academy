@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OMP Academy
 
-## Getting Started
+Plataforma para estudiar **OpenMP y algoritmos paralelos** (CS4052 · Computación Paralela y Distribuida, UTEC) para el examen del 18 de noviembre.
 
-First, run the development server:
+- **Aprende**: 20 lecciones estilo Codecademy (teoría a la izquierda, compilador real a la derecha, pistas, checkpoints verificados con tests).
+- **Teoría**: lecturas, preguntas con puntos y flashcards con repaso espaciado (Leitner).
+- **Retos**: 24 problemas tipo LeetCode con tests ocultos, pistas y editorial con complejidad.
+- **Resueltos**: 18 ejercicios de prácticas y parciales paso a paso, con DAG, Ts, T∞, Tp, S, E e isoeficiencia.
+- **Diapos**: resúmenes propios de U4.1–U4.5 y U5.1–U5.4, con visor navegable.
+- Inicio con cuenta regresiva, plan de estudio diario, racha, XP y niveles. El progreso se guarda en el navegador (exportable desde `/progreso`).
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El código se compila en servidor con Godbolt (g++ `-O2 -std=c++17 -fopenmp`) y Wandbox como respaldo (`/api/run`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verificación del contenido
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npx tsx scripts/verify-solutions.ts            # todas las soluciones contra Godbolt
+npx tsx scripts/verify-solutions.ts --local    # con g++ local
+npx tsx scripts/verify-solutions.ts --starters # los códigos iniciales NO deben pasar
+npx tsx scripts/check-links.ts                 # enlaces internos del contenido
+```
 
-## Learn More
+## Notas
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Stack: Next.js (App Router), React 19, Tailwind v4, Zustand, CodeMirror 6, KaTeX.
+- Los PDFs del curso **no** están en el repositorio; las diapos son resúmenes propios.

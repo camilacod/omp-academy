@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PDFs y material del curso (no se publica)
+*.pdf
+*.zip
+.vercel
+*.tsbuildinfo
